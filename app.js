@@ -1,9 +1,11 @@
 var express = require('express');
 var exphbs = require('express-handlebars');
+var bodyParser = require('body-parser');
 var port = process.env.PORT || 3000
 const mercadopago = require('mercadopago');
 
 var app = express();
+app.use(bodyParser.json());
 mercadopago.configure({
     access_token: 'APP_USR-8208253118659647-112521-dd670f3fd6aa9147df51117701a2082e-677408439',
     integrator_id: 'dev_2e4ad5dd362f11eb809d0242ac130004'
