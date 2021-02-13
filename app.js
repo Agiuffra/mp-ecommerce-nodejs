@@ -87,6 +87,7 @@ app.get('/detail', async function (req, res) {
     try {
         const respuestaMP = await mercadopago.preferences.create(preference);
         console.log(respuestaMP);
+        req.query.id_mp = respuestaMP.body.id;
         req.query.init_point = respuestaMP.body.init_point;
     } catch (error) {
         console.log(error);
